@@ -1,6 +1,6 @@
 {
   "name": "to-easy",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Elegant wrapper for error handling both synchronous and asynchronous functions",
   "keywords": [
     "to",
