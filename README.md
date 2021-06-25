@@ -25,12 +25,10 @@ yarn add to-easy
 ```ts
 import { asyncTo, syncTo } from 'to-easy'
 
-const isEven = (n: number) => new Promise(
-    (resolve, reject) => {
-        if (n % 2 === 0) resolve(true)
-        else reject(new Error('Number is not even'))
-    }
-)
+const isEven = async (n: number) => {
+    if (n % 2 === 0) return true
+    else throw new Error('Number is not even')
+}
 
 const isOdd = (n: number) => {
     if (n % 2 !== 0)  return true
@@ -39,15 +37,18 @@ const isOdd = (n: number) => {
 
 const checkIfNumberIsEven = async (n: number) => {
     const [e, result] = await asyncTo(isEven(n))
-    if (!result) throw e
-    console.log(`${n} is even!`)
+    if (!result) console.error(e.message)
+    else console.log(`${n} is even!`)
 }
 
 const checkIfNumberIsOdd = (n: number) => {
     const [e, result] = syncTo(isOdd, n)
-    if (!result) throw e
-    console.log(`${n} is odd!`)
+    if (!result) console.error(e.message)
+    else console.log(`${n} is odd!`)
 }
+
+checkIfNumberIsEven(2) // 2 is even!
+checkIfNumberIsOdd(2) // Number is not odd
 ```
 
 [npm-url]: https://npmjs.org/package/to-easy
