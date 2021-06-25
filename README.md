@@ -1,10 +1,10 @@
-# await-to-js
+# to-easy
 
 [![NPM version][npm-badge]][npm-url]
 [![Downloads][download-badge]][npm-url]
 [![License][license-badge]][npm-url]
 
-> Elegant wrapper for error handling both synchronous and asynchronous functions
+> Elegant wrapper for error handling both synchronous and asynchronous functions. Inspired by await-to-js
 
 ## Pre-requisites
 You need to use Node 7.6 (or later) or an ES7 transpiler in order to use async/await functionality.
