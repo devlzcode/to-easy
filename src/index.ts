@@ -13,8 +13,8 @@ export const asyncTo = <T, U = Error>(
  * @param { Function } syncFn The synchronous function
  */
 export const syncTo = <T, U = Error>(
-    syncFn: (...rest: any[]) => T,
-    ...rest: any[]
+    syncFn: (...rest: unknown[]) => T,
+    ...rest: unknown[]
 ): ToResult<T, U> => {
     try {
         const result = syncFn(...rest)
